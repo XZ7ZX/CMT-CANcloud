@@ -30,7 +30,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm i --no-audit --no-fund --legacy-peer-deps
 
       - name: Build application
         run: CI=false npm run build
