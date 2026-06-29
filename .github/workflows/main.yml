@@ -26,11 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       - name: Build application
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
         run: npm run build
-      - name: Debug - list output dirs
-        run: ls -la && echo "---" && ls -la build 2>/dev/null || echo "no build/" && ls -la dist 2>/dev/null || echo "no dist/"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
