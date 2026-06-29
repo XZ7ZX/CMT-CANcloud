@@ -27,9 +27,8 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Build application
         env:
-          CI: false
           NODE_OPTIONS: --openssl-legacy-provider
-        run: npx webpack --mode production
+        run: npm run build
       - name: Debug - list output dirs
         run: ls -la && echo "---" && ls -la build 2>/dev/null || echo "no build/" && ls -la dist 2>/dev/null || echo "no dist/"
       - name: Setup Pages
